@@ -391,7 +391,7 @@ public class sugdemo {
         FST<Long> fst = buildHzFST("./src/main/resources/word.txt");
         FST<Long> revfst = buildHzFST("./src/main/resources/word_rev.txt");
 
-        System.out.println("中文前后缀sug---------------");
+        System.out.println("------------------【中文前后缀sug】---------------");
         String forsug = "牛肉";
 
         if (forsug.length() > 1) {
@@ -403,12 +403,12 @@ public class sugdemo {
             sug(forsug, revfst, true);
         }
 
-        System.out.println("拼音首字母sug---------------");
+        System.out.println("------------------ 【拼音首字母sug】---------------");
         PySug pysug = buildPinyinFST("./src/main/resources/word.txt",true);
         pinyinsug("nr",pysug.fst,pysug.wordMap);
 
 
-        System.out.println("拼音前缀sug---------------");
+        System.out.println("------------------  【拼音前缀sug】---------------");
         PySug pysug2 = buildPinyinFST("./src/main/resources/word.txt",false);
         pinyinsug("niur",pysug2.fst,pysug2.wordMap);
 
